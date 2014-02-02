@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+          <viewerContribution id="packager.contribution" targetID="org.eclipse.ui.views.ResourceNavigator"
+         objectClass="packager.contribution.ResourceNavigatorContribution">
+         <menu
+               label="packager"
+               id="packager.menu">
+            <separator name="tools"/>
+         </menu>
+         <action
+               class="packager.actions.GitOpenDialogAction"
+               enablesFor="+"
+               id="packager.actions.GitOpenDialogAction"
+               label="Git文件列表"
+               menubarPath="packager.menu/tools">
+         </action>
+         <action
+               class="packager.actions.SvnOpenDialogAction"
+               enablesFor="+"
+               id="packager.actions.SvnOpenDialogAction"
+               label="svn文件列表"
+               menubarPath="packager.menu/tools">
+         </action>
+      </viewerContribution>
+   </extension>
+
+</plugin>
